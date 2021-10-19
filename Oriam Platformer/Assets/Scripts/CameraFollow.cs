@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// At the moment here, the main problem with this script is that the camera won't follow the target down and right at the same time. It will not follow down until the character has been centered.
+// (2017) At the moment here, the main problem with this script is that the camera won't follow the target down and right at the same time. It will not follow down until the character has been centered.
+
+// (Oct 2021) Bro idk how any of this works anymore but i'm tryna tweak these static values and I can't get any combination of them to even affect the camera movement at all bro idk whats going on
 
 public class CameraFollow : MonoBehaviour {
-	public Transform target;
 	public float damping = 1;
-	public float lookAheadFactor = 3;
+	public float lookAheadFactor = 3;	
 	public float lookAheadReturnSpeed = 0.5f;
 	public float lookAheadMoveThreshold = 0.1f;
 
+	public bool strictFollow = false;
+
+	private Transform target;
 	private float m_OffsetZ;
 	private Vector3 m_LastTargetPosition;
 	private Vector3 m_CurrentVelocity;
@@ -26,19 +30,21 @@ public class CameraFollow : MonoBehaviour {
 		m_LastTargetPosition = target.position;
 		m_OffsetZ = (transform.position - target.position).z;
 		transform.parent = null;
+		if (strictFollow){
+			damping = 0.0f;
+		}
 	}
-
 
 	// Update is called once per frame
 	private void Update() {
-		// only update lookahead pos if accelerating or changed direction
+
+		
 		float xMoveDelta = (target.position - m_LastTargetPosition).x;
-		//float yMoveDelta = (target.position - m_LastTargetPosition).y;
+		float yMoveDelta = (target.position - m_LastTargetPosition).y;
 
-
-		//bool updateLookAheadTarget = (Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold || Mathf.Abs(yMoveDelta) > lookAheadMoveThreshold);
-		bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
-
+		// only update lookahead pos if accelerating or changed direction
+		bool updateLookAheadTarget = (Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold || Mathf.Abs(yMoveDelta) > lookAheadMoveThreshold);
+		// bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
 		if (updateLookAheadTarget) {
 			m_LookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
@@ -49,10 +55,9 @@ public class CameraFollow : MonoBehaviour {
 
 		Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward * m_OffsetZ;
 		Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
-
 		transform.position = newPos;
-
 		m_LastTargetPosition = target.position;
+
 	}
 
 	/*public float CameraZ;

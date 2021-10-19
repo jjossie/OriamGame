@@ -23,7 +23,6 @@ public class LevelGenerator : MonoBehaviour {
 
 	public void GenerateAllGroundTiles() {
 		DoneGeneratingGroundTiles = true;
-		Debug.Log("4 - GenerateAllGroundTiles()");
 		foreach (GroundTile tile in GroundTiles) {
 			tile.GenerateGroundTile();
 		}
@@ -70,16 +69,23 @@ public class LevelGenerator : MonoBehaviour {
 
 
 	public Texture2D mapImage;
-	public TileAssociation[] tileAssociations;
+	public List<TileAssociation> tileAssociations;
 
-	// Use this for initialization
-	void Awake() {
+	public void AddTileAssociation() {
+		
+		tileAssociations.Add(new TileAssociation());
+	}
+	public void RemoveTileAssociation(TileAssociation t) {
+		tileAssociations.Remove(t);
+	}
+	
+	void Awake() { // Use this for initialization
 		GroundTiles = new List<GroundTile>();
-		Debug.Log("1 - Awake()");
 		GenerateLevel();
 	}
+
+
 	void GenerateLevel() {
-		Debug.Log("2 - GenerateLevel()");
 		// Loop through each pixel
 		for (int x = 0; x < mapImage.width; x++) {
 			for (int y = 0; y < mapImage.height; y++) {
@@ -90,7 +96,6 @@ public class LevelGenerator : MonoBehaviour {
 	}
 
 	void GenerateTile(int x, int y, Color color) {
-		Debug.Log("3.1 - GenerateTile()");
 		if (color.a == 0)
 			return; // Automatically void all empty pixels
 		foreach (TileAssociation tile in tileAssociations) {
@@ -99,18 +104,16 @@ public class LevelGenerator : MonoBehaviour {
 				Instantiate(tile.prefab, newPosition, Quaternion.identity, transform);
 				if (tile.prefab.CompareTag("GroundTiles")) {
 					GroundTileCount++;
-					Debug.Log("3.1.2 - GroundTileCount is being incremented.");
 				}
 			}
 			if (color.Equals(tileAssociations[3].color)) {
-				Debug.Log("Tryna create an ItemBox");
 			}
 		}
 		
 	}
 
 	private void Update() {
-		if((GroundTiles.Count == GroundTileCount) && !DoneGeneratingGroundTiles) {
+		if(!DoneGeneratingGroundTiles && (GroundTiles.Count == GroundTileCount)) {
 			GenerateAllGroundTiles(); // <-- This is that dumb fix I was talking about earlier
 			return;
 		}

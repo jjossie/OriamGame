@@ -16,7 +16,6 @@ public class GroundTile{
 	// Construction
 
 	public GroundTile(int x, int y) {
-		Debug.Log("3.3 - GroundTile() Constructor");
 		xPos = x;
 		yPos = y;
 		level = GameObject.Find("Level").GetComponent<LevelGenerator>();
@@ -25,7 +24,6 @@ public class GroundTile{
 
 
 	public void GenerateGroundTile() {
-		Debug.Log("5.1 - GenerateGroundTile()");
 		// Begin checking proximity values to determine surroundings
 		var t = level.GetSurroundings(xPos, yPos);
 		// Done checking proximity values, now check scenarios for possible sprites to take on
