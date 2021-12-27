@@ -5,21 +5,23 @@ using System.Collections;
 /// </summary>
 
 [System.Serializable]
-public struct TileSurroundings {
-	public bool up;
-	public bool down;
-	public bool left;
-	public bool right;
-	public bool upleft;
-	public bool upright;
-	public bool downleft;
-	public bool downright;
+public struct TileSurroundings
+{
+    public bool up;
+    public bool down;
+    public bool left;
+    public bool right;
+    public bool upleft;
+    public bool upright;
+    public bool downleft;
+    public bool downright;
 
-	public void PrintValues() {
-		Debug.Log("Up: " + up.ToString());
-		Debug.Log("Down: " + down.ToString());
-		Debug.Log("Left: " + left.ToString());
-		Debug.Log("Right: " + right.ToString());
-	}
+    public void PrintValues()
+    {
+        Debug.Log("Up: " + up.ToString());
+        Debug.Log("Down: " + down.ToString());
+        Debug.Log("Left: " + left.ToString());
+        Debug.Log("Right: " + right.ToString());
+    }
 
 }

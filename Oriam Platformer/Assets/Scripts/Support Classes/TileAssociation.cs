@@ -6,12 +6,13 @@
 [System.Serializable]
 public class TileAssociation
 {
-	public Color color;
-	public GameObject prefab;
+    public Color color;
+    public GameObject prefab;
 
-	public TileAssociation() {
-		color = Color.black;
-		prefab = null;
-	}
+    public TileAssociation()
+    {
+        color = Color.black;
+        prefab = null;
+    }
 }
 
