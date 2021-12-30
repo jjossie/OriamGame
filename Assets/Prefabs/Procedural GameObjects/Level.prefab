@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1497930302643284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4595629963242464}
+  - component: {fileID: 114669899293415564}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4595629963242464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497930302643284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114669899293415564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497930302643284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f4476babc0cbb4ab32361b081161b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileTemplates:
+  - name: Dirt
+    prefab: {fileID: 1405440904350766, guid: 09758372290898a448a19ce7a6e065fb, type: 3}
+  - name: Left
+    prefab: {fileID: 1618245121346810, guid: ad546d4b91d080242920431e35ef62af, type: 3}
+  - name: Mid
+    prefab: {fileID: 1205658783251274, guid: 221a5fb1fc8d4a248ba9488960d14ecf, type: 3}
+  - name: Right
+    prefab: {fileID: 1626999673156510, guid: 4fab294f25af6b54eb92dae6c8843699, type: 3}
+  - name: Solo
+    prefab: {fileID: 1944546027513700, guid: a94b2d6ed97cd5a4f9a1af067bb3153d, type: 3}
+  - name: TopLeft
+    prefab: {fileID: 1224241686520536, guid: 3cc205d9c087de74c8d06026783674ea, type: 3}
+  - name: TopRight
+    prefab: {fileID: 1200184363130910, guid: ea40374c3d03cf24a8f854ecc3d829e3, type: 3}
+  - name: TopMid
+    prefab: {fileID: 1609532854280778, guid: dbe81a3c78b185045bc1b0b140241458, type: 3}
+  - name: SlopeRight
+    prefab: {fileID: 1542550598283072, guid: f2702ab02a77b934bafbb4037f39ee41, type: 3}
+  - name: SlopeLeft
+    prefab: {fileID: 1215632504684062, guid: 69ee565390609eb4e95468e74e15abbd, type: 3}
+  mapImage: {fileID: 2800000, guid: 81f418f61a5b67a4fa53a0cd9823b169, type: 3}
+  tileAssociations:
+  - color: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1727797577149178, guid: 33cf12b11834fea418c39f64179edeac, type: 3}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1698599087900502, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
+  - color: {r: 1, g: 0.8980392, b: 0, a: 1}
+    prefab: {fileID: 1980688452431600, guid: b76c44b7b8879444796511f00a24a830, type: 3}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1948391162746320, guid: 9de34d445fda22e489e19eb635ab6168, type: 3}
+  - color: {r: 0, g: 0.7411765, b: 1, a: 1}
+    prefab: {fileID: 1817277829468122, guid: 99934d4127fa6fe4fb3c8b19140d02c4, type: 3}
+  - color: {r: 0.30980393, g: 0.30980393, b: 1, a: 1}
+    prefab: {fileID: 1149305073834466, guid: 39f441812a760d0489f58d251e2b2d04, type: 3}
+  - color: {r: 0.30980393, g: 1, b: 0.30980393, a: 1}
+    prefab: {fileID: 1030600450701424, guid: 6bac9522affa5b34e80f1aea4c851733, type: 3}
+  - color: {r: 1, g: 0.30980393, b: 0.30980393, a: 1}
+    prefab: {fileID: 1564765943873082, guid: 63492bcc4f45a3047a9108e8fd92af72, type: 3}
+  - color: {r: 1, g: 1, b: 0.30980393, a: 1}
+    prefab: {fileID: 1268400561914486, guid: b13cf1b79b42c154cb7cf122b0c63f51, type: 3}
