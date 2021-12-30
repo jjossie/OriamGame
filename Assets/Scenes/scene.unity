@@ -162,6 +162,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114669899293415564, guid: 3ed11ae4d877c46408bc56f6814cc093,
+        type: 3}
+      propertyPath: flowControllerGameObject
+      value: 
+      objectReference: {fileID: 862494675}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed11ae4d877c46408bc56f6814cc093, type: 3}
 --- !u!1 &862494675
@@ -194,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCount: 0
+  totalCoinCount: 0
 --- !u!4 &862494677
 Transform:
   m_ObjectHideFlags: 0

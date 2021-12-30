@@ -39,3 +39,12 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+###
+# Extra Stuff
+###
+[Ll]ogs/*
+
+.vs/
+.vsconfig
+UserSettings/Search.index

@@ -9,8 +9,10 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
 
+    public GameObject flowControllerGameObject;
     public List<GroundTile> GroundTiles;
     public GroundTileTemplate[] tileTemplates;
+
 
     public void AddGroundTile(GroundTile g)
     {
@@ -130,6 +132,7 @@ public class LevelGenerator : MonoBehaviour
                 {
                     // Gold Coin
                     //Debug.Log("Generating a Gold Coin");
+                    flowControllerGameObject.GetComponent<FlowController>().AddCoinToTotal();
                 }
             }
         }
