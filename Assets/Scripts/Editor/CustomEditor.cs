@@ -1,6 +1,6 @@
 ﻿
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 [UnityEditor.CustomEditor(typeof(LevelGenerator), false)]
 public class CustomEditor : Editor

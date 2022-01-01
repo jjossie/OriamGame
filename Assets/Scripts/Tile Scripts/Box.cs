@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Box : MonoBehaviour
@@ -17,7 +15,7 @@ public class Box : MonoBehaviour
         BoxCollider2D boxCollider = gameObject.GetComponent<BoxCollider2D>();
         float colliderOffset = collider.GetComponentInParent<BoxCollider2D>().size.y / 2.0f;
         float boxOffset = boxCollider.size.y / 2.0f;
-        
+
         if ((collider.transform.position.y + colliderOffset) < (transform.position.y - boxOffset))
         {
             Debug.Log("Box hit from the bottom");
@@ -27,8 +25,8 @@ public class Box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    
+
 }

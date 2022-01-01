@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -123,7 +122,7 @@ public class LevelGenerator : MonoBehaviour
             if (color.Equals(tile.color))
             {
                 Vector2 newPosition = new Vector2(x, y);
-                GameObject tileObject = Instantiate(tile.prefab, newPosition, Quaternion.identity, transform);
+                Instantiate(tile.prefab, newPosition, Quaternion.identity, transform);
                 if (tile.prefab.CompareTag("GroundTiles"))
                 {
                     GroundTileCount++;
@@ -132,7 +131,8 @@ public class LevelGenerator : MonoBehaviour
                 {
                     // Gold Coin
                     //Debug.Log("Generating a Gold Coin");
-                    flowControllerGameObject.GetComponent<FlowController>().AddCoinToTotal();
+                    // TODO Counting these coins should not be done here.
+                    //flowControllerGameObject.GetComponent<FlowController>().AddCoinToTotal();
                 }
             }
         }

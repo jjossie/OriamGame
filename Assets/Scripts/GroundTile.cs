@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// A Class to be instantiated for every MonoGroundTileConstructor prefab created in order to be indexed and controlled by LevelGenerator. 

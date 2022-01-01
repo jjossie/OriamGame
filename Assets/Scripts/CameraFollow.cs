@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 // (2017) At the moment here, the main problem with this script is that the camera won't follow the target down and right at the same time. It will not follow down until the character has been centered.

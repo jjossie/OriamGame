@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698599087900502, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4552728938071288, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
       propertyPath: m_RootOrder
@@ -298,11 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4552728938071288, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 16.44
       objectReference: {fileID: 0}
     - target: {fileID: 4552728938071288, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.08
+      value: 9.43
       objectReference: {fileID: 0}
     - target: {fileID: 4552728938071288, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
       propertyPath: m_LocalPosition.z
@@ -336,6 +336,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61406588598853272, guid: b5fcaf9c71dd3d541ab934ac15e09943,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.94285715
+      objectReference: {fileID: 0}
+    - target: {fileID: 61406588598853272, guid: b5fcaf9c71dd3d541ab934ac15e09943,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.3142858
+      objectReference: {fileID: 0}
     - target: {fileID: 114119670970607180, guid: b5fcaf9c71dd3d541ab934ac15e09943,
         type: 3}
       propertyPath: m_Enabled
@@ -343,6 +353,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5fcaf9c71dd3d541ab934ac15e09943, type: 3}
+--- !u!1 &1626578518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1698599087900502, guid: b5fcaf9c71dd3d541ab934ac15e09943,
+    type: 3}
+  m_PrefabInstance: {fileID: 1626578517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1626578519
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626578518}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 173c05f7454ab0042a4adcbc987339e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1809602735
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +425,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.314, g: 0.58077776, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.43915984, g: 0.67107725, b: 0.9056604, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
