@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/* I created this script using a tutorial found here:
+ * https://learn.unity.com/tutorial/live-session-2d-platformer-character-controller
+ * I don't really understand it and I suspect it might be causing me some problems. 
+ * So I'm going to try something else.
+ * */
 public class PhysicsObject : MonoBehaviour
 {
-    public float gravityModifier = 4f;
-    public float minGroundNormalY = 0.65f;
+    public const float gravityModifier = 4f;
+    public const float minGroundNormalY = 0.65f;
 
-    public bool grounded;
+    public bool isGrounded;
     protected Vector2 groundNormal;
 
     protected Vector2 targetVelocity;
@@ -41,9 +46,9 @@ public class PhysicsObject : MonoBehaviour
     {
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        targetVelocity = Vector2.zero;
+        //targetVelocity = Vector2.zero;
         ComputeVelocity();
         SetAnimations();
     }
@@ -53,7 +58,7 @@ public class PhysicsObject : MonoBehaviour
         velocity += gravityModifier * Time.deltaTime * Physics2D.gravity;
         velocity.x = targetVelocity.x;
 
-        grounded = false;
+        isGrounded = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
@@ -82,28 +87,28 @@ public class PhysicsObject : MonoBehaviour
                 hitBufferList.Add(hitBuffer[i]);
             }
 
-            for (int i = 0; i < hitBufferList.Count; i++)
+            foreach (RaycastHit2D hit in hitBufferList)
             {
-                Vector2 currentNormal = hitBufferList[i].normal;
+                Vector2 hitNormal = hit.normal;
 
-                if (currentNormal.y > minGroundNormalY)
+                if (hitNormal.y > minGroundNormalY)
                 {
-                    grounded = true;
+                    isGrounded = true;
                     if (Ymovement)
                     {
-                        groundNormal = currentNormal;
-                        currentNormal.x = 0;
+                        groundNormal = hitNormal;
+                        hitNormal.x = 0;
                     }
 
                 }
 
-                float projection = Vector2.Dot(velocity, currentNormal);
+                float projection = Vector2.Dot(velocity, hitNormal);
                 if (projection < 0)
                 {
-                    velocity -= (projection * currentNormal);
+                    velocity -= (projection * hitNormal);
                 }
 
-                float modifiedDistance = hitBufferList[i].distance - shellRadius;
+                float modifiedDistance = hit.distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
 
